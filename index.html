@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 <head>
     
     <title>Angular Practice</title>
@@ -8,8 +8,14 @@
     
     </head>
 <body>
+<!-- feb27-16 the following code types out the input of the text box as a name, this shows that the angular set up works-->
+    <div ng-app="">
     
+    <input type="text" ng-model="name">
     
+        <p>Name:</p>
+        <p ng-bind="name"></p>
+    </div>
     
     
     
