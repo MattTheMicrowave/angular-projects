@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="ToDo">
+
+<head>
+
+    <title>To Do List in Angular</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script type="text/javascript" src="js/to-do-angular.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/to-do-angular.css">
+</head>
+
+<body>
+    <div ng-controller="todoController">
+
+
+        <h2>Building a To-Do List in Angular</h2>
+
+        <form name="frm" ng-submit="addTodo()">
+<!--            because i have the ng-submit tied to the form element, it automatically gets attached to the submission button -->
+            <input type="text" name="newtodo" ng-model="newtodo" required />
+            <button>Push</button>
+            <br>
+            <br>
+            <button ng-click="cleardone()">Clear</button>
+        </form>
+        <ul>
+            <li ng-repeat="todo in todos">
+
+                <input type="checkbox" ng-model="todo.done" /><span ng-class="{'done':todo.done}">{{todo.title}}</span>
+
+            </li>
+
+        </ul>
+
+
+    </div>
+
+
+
+
+
+
+</body>
+
+
+
+
+</html>
