@@ -16,13 +16,14 @@
 
         <h2>Building a To-Do List in Angular</h2>
 
-        <form name="frm" ng-submit="addTodo()">
+        <form name="frm" ng-submit="addTodo()" type="button">
 <!--            because i have the ng-submit tied to the form element, it automatically gets attached to the submission button -->
             <input type="text" name="newtodo" ng-model="newtodo" required />
-            <button ng-disabled="frm.$invalid">Push</button>
+            <button ng-disabled="frm.$invalid">Push Item</button>
             <br>
             <br>
             <button ng-disabled="newtodo" ng-click="cleardone()">Clear</button>
+<!--            the ng-disabled-newtodo prevents addition of an item by clicking the Clear button -->
         </form>
         <ul>
             <li ng-repeat="todo in todos">
