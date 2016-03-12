@@ -19,15 +19,15 @@
         <form name="frm" ng-submit="addTodo()">
 <!--            because i have the ng-submit tied to the form element, it automatically gets attached to the submission button -->
             <input type="text" name="newtodo" ng-model="newtodo" required />
-            <button>Push</button>
+            <button ng-disabled="frm.$invalid">Push</button>
             <br>
             <br>
-            <button ng-click="cleardone()">Clear</button>
+            <button ng-disabled="newtodo" ng-click="cleardone()">Clear</button>
         </form>
         <ul>
             <li ng-repeat="todo in todos">
 
-                <input type="checkbox" ng-model="todo.done" /><span ng-class="{'done':todo.done}">{{todo.title}}</span>
+                <input type="checkbox" name="checkedbox" ng-model="todo.done" /><span ng-class="{'done':todo.done}">{{todo.title}}</span>
 
             </li>
 
